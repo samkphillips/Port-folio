@@ -1,0 +1,17 @@
+{
+  "development": {
+    "database": "port_folio_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "port_folio_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "database": "port_folio_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
