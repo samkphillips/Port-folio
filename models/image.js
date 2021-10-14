@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Image extends Model {
     /**
@@ -10,17 +8,30 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Image.belongsTo(models.Portfolio, { foreignKey: 'portfolioId' })
     }
-  };
-  Image.init({
-    title: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    image: DataTypes.TEXT,
-    settings: DataTypes.JSONB
-  }, {
-    sequelize,
-    modelName: 'Image',
-  });
-  return Image;
-};
+  }
+  Image.init(
+    {
+      title: DataTypes.STRING,
+      description: DataTypes.TEXT,
+      image: DataTypes.TEXT,
+      settings: DataTypes.JSONB,
+      portfolioId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        allowNull: false,
+        references: {
+          model: 'portfolios',
+          key: 'id'
+        }
+      }
+    },
+    {
+      sequelize,
+      modelName: 'Image',
+      tableName: 'images'
+    }
+  )
+  return Image
+}
