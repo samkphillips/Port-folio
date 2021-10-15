@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { /*SignInUser /*, RegisterUser/* */ } from '../services/Auth'
+import { SignInUser /*, RegisterUser/* */ } from '../services/Auth'
 
 export default {
   name: 'LoginForm',
@@ -19,11 +19,12 @@ export default {
     password: ''
   }),
   methods: {
-    login() {
-      // await SignInUser({  })
-      console.log(this.$root.$data.store.message)
-      this.$root.$data.store.message += '?'
-      console.log(this.$root.$data.store.message)
+    async login() {
+      const payload = await SignInUser({ email: this.email, password: this.password })
+      this.email = ''
+      this.password = ''
+      this.$root.$data.store.setUser(payload)
+      this.$root.$data.store.setAuthenticated(true)
     }
   }
 }

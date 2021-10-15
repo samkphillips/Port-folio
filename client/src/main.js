@@ -3,30 +3,32 @@ import VueRouter from 'vue-router'
 import router from './router'
 import App from './App.vue'
 
+import { CheckSession } from './services/Auth'
+
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 
 let store = {
-  message: 'Store seems to get passed down?'
+  // message: 'Store seems to get passed down?'
   //accessed via "this.$root.$data.store.message"
+
   //auth stuff can live here I think, Vuex eat your heart out
   //https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch
-  /*
   authenticated: false || localStorage.getItem('authenticated'),
-  setAuthenticated (newValue) {
+  setAuthenticated(newValue) {
     this.authenticated = newValue
   },
-  user: {user details, defaults null},
-  setUser (newUser) {
+  user: null, //user object lives here, just defaults as null
+  setUser(newUser) {
     this.user = newUser
   },
-  handleLogOut () {
+  handleLogOut() {
     this.user = null
     this.authenticated = false
     localStorage.clear()
   },
-  async checkToken () {
-    const session = await CheckSession() //gotta add that from services
+  async checkToken() {
+    const session = await CheckSession()
     this.user = session
     this.authenticated = true
     localStorage.setItem('authenticated', '1')
@@ -37,10 +39,9 @@ let store = {
       this.checkToken()
     }
   }
-  */
 }
 
-//store.initializeToken()
+store.initializeToken()
 
 new Vue({
   render: h => h(App),
