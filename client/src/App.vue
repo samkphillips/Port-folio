@@ -3,7 +3,6 @@
     <header>
       <Nav />
     </header>
-    <h1>Howdy</h1>
     <main>
       <router-view></router-view>
     </main>
