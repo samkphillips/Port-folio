@@ -2,11 +2,16 @@
   <div>
     <h2>Login</h2>
     <p>Login and Sign Up here.</p>
-    <div>
-      <LoginForm />
+    <div v-if="!authenticated">
+      <div>
+        <LoginForm />
+      </div>
+      <div>
+        <RegisterForm />
+      </div>
     </div>
-    <div>
-      <RegisterForm />
+    <div v-else>
+      <h5>You are already logged in.</h5>
     </div>
   </div>
 </template>
@@ -17,6 +22,9 @@ import RegisterForm from '../components/RegisterForm.vue'
 
 export default {
   name: 'Login',
+  computed: {
+    authenticated: function () {return this.$root.$data.store.authenticated}
+  },
   components: {
     LoginForm,
     RegisterForm

@@ -29,8 +29,7 @@ export default {
   },
   methods: {
     async signup() {
-      const payload = await RegisterUser({ email: this.email, password: this.password, username: this.username })
-      console.log(payload)
+      await RegisterUser({ email: this.email, password: this.password, username: this.username })
       this.email = ''
       this.username = ''
       this.password = ''
