@@ -6,18 +6,34 @@
     <router-link class="link" to="/portfolio">Portfolio[Temp Link]</router-link>
     <router-link class="link" to="/login">Login/Signup</router-link>
     <router-link class="link" to="/account">Account</router-link>
-    <h3 v-if="this.$root.$data.store.authenticated">Hello, {{ this.$root.$data.store.user.email }}!</h3>
-    <h3 v-else>User not signed in.</h3>
+    <div v-if="authenticated && user">
+      <h5>Hello, {{ user.email }}!</h5>
+      <button @click="logOut">Log Out</button>
+    </div>
+    <h5 v-else>User not signed in.</h5>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'Nav'
+  name: 'Nav',
+  computed: {
+    user: function () {return this.$root.$data.store.user},
+    authenticated: function () {return this.$root.$data.store.authenticated}
+  },
+  methods: {
+    logOut() {
+      this.$root.$data.store.handleLogOut()
+    }
+  }
 }
 </script>
 
 <style scoped>
+nav {
+  background-color: antiquewhite;
+}
+
 .link {
   margin: 0 10px;
 }
