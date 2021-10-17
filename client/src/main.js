@@ -8,12 +8,10 @@ import { CheckSession } from './services/Auth'
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 
+//create store and add it to data.
+//This object can be accessed anywhere within the Vue instance.
+//Access via this.$root.$data.store
 let store = {
-  // message: 'Store seems to get passed down?'
-  //accessed via "this.$root.$data.store.message"
-
-  //auth stuff can live here I think, Vuex eat your heart out
-  //https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch
   authenticated: false || localStorage.getItem('authenticated'),
   setAuthenticated(newValue) {
     this.authenticated = newValue

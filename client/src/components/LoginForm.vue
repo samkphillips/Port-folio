@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { SignInUser /*, RegisterUser/* */ } from '../services/Auth'
+import { SignInUser } from '../services/Auth'
 
 export default {
   name: 'LoginForm',
