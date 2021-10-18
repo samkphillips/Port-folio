@@ -30,6 +30,7 @@ export default {
   methods: {
     logOut() {
       this.$root.$data.store.handleLogOut()
+      this.$router.push('/')
     }
   }
 }
