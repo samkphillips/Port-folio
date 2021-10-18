@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <h2>Portfolio</h2>
-    <p>Portfolio detail view! See some art.</p>
-    <p>This portfolio ID is {{ this.$route.params.portfolio_id }}</p>
-    <div v-if="portfolioDetails">
+  <div class="portfolio-body">
+    <h2>Title</h2>
+    <p>Description goes here and here and here</p>
+    <div v-if="portfolioDetails" class="image-container">
       <img
         v-for="image in portfolioDetails.Images"
         :key="`image-${image.id}`"
@@ -32,8 +31,34 @@ export default {
   methods: {
     async getPortfolioDetails() {
       const res = await axios.get(`${BASE_URL}/portfolio/byId/${this.$route.params.portfolio_id}`)
+      console.log(res.data)
       this.portfolioDetails = res.data
     }
   }
 }
 </script>
+
+<style scoped>
+.portfolio-body {
+  width: calc(100vw - 15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  width: 100%;
+  padding: 0 0 70px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 300px;
+  margin: 3px;
+}
+</style>
