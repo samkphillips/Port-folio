@@ -3,6 +3,7 @@
     <h2>Account</h2>
     <div v-if="userData">
       <p>Hello, {{ userData.username }}</p>
+
       <h3>Portfolio Settings</h3>
       <div v-if="userData.Portfolio">
         <p>Looks like you have a portfolio, neato.</p>
@@ -10,8 +11,9 @@
       <div v-else>
         <p>Your account does not yet have an associated portfolio.</p>
         <p>Simply click below to create one.</p>
-        <button>Create Portfolio</button>
+        <button @click="createPortfolio">Create Portfolio</button>
       </div>
+
       <h3>Account Settings</h3>
       <p>Password Change Form</p>
     </div>
@@ -26,6 +28,7 @@
 import axios from 'axios'
 
 import { BASE_URL } from '../globals'
+import { CreatePortfolio } from '../services/PortfolioServices'
 
 export default {
   name: 'Account',
@@ -43,6 +46,10 @@ export default {
       const res = await axios.get(`${BASE_URL}/user/byId/${this.user.id}`)
       console.log(res)
       this.userData = res.data
+    },
+    async createPortfolio() {
+      const res = await CreatePortfolio({ "user_id": this.userData.id })
+      this.userData.Portfolio = res
     }
   }
 }
