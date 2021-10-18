@@ -18,9 +18,10 @@ form {
 
 form input {
   margin: 3px;
+  width: 100%;
 }
 
 form button {
   margin: 3px;
-  width: 50%;
+  width: 40%;
 }
