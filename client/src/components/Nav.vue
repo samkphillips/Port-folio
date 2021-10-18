@@ -10,8 +10,7 @@
     </div>
     <div>
       <div v-if="authenticated && user" class="flex-row">
-        <h5>Hello, {{ user.email }}!</h5>
-        <router-link class="link" to="/account">Account</router-link>
+        <router-link class="link" to="/account">My Account</router-link>
         <button @click="logOut">Log Out</button>
       </div>
       <div v-else>
