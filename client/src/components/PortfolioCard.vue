@@ -10,6 +10,9 @@ export default {
   props: {
     portfolio: Object
   },
+  mounted() {
+    console.log(this.portfolio)
+  },
   methods: {
     selectPortfolio() {
       this.$router.push(`/portfolio/${this.portfolio.id}`)
@@ -21,6 +24,8 @@ export default {
 <style scoped>
 div {
   background-color: cornflowerblue;
+  height: 150px;
+  width: 150px;
   padding: 10px;
   margin: 5px;
 }
