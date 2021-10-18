@@ -34,6 +34,7 @@ export default {
       this.username = ''
       this.password = ''
       this.confirmPassword = ''
+      this.$router.push('/')
     }
   }
 }
