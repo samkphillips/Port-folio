@@ -1,12 +1,10 @@
 <template>
   <div>
-    <h2>Login</h2>
-    <p>Login and Sign Up here.</p>
-    <div v-if="!authenticated">
-      <div>
+    <div v-if="!authenticated" class="container">
+      <div class="login">
         <LoginForm />
       </div>
-      <div>
+      <div class="signup">
         <RegisterForm />
       </div>
     </div>
@@ -31,3 +29,34 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.container {
+  width: calc(100vw - 15px);
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login,
+.signup {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  background-color: #7582E6;
+}
+
+.signup {
+  background-color: #1A2123;
+  color: white;
+}
+</style>
