@@ -14,3 +14,11 @@ form {
   width: 450px;
   margin: 10px;
 }
+
+form input {
+  margin: 3px;
+}
+
+form button {
+  margin: 3px;
+}
