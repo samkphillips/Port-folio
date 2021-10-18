@@ -31,7 +31,6 @@ export default {
   methods: {
     async getPortfolioDetails() {
       const res = await axios.get(`${BASE_URL}/portfolio/byId/${this.$route.params.portfolio_id}`)
-      console.log(res.data)
       this.portfolioDetails = res.data
     }
   }
