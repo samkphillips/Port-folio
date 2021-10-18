@@ -1,7 +1,7 @@
 <template>
   <div class="portfolio-body">
-    <h2 v-if="portfolioDetails.title.length > 0">{{ portfolioDetails.title }}</h2>
-    <p v-if="portfolioDetails.description.length > 0">{{ portfolioDetails.description }}</p>
+    <h2 v-if="portfolioDetails && portfolioDetails.title.length > 0">{{ portfolioDetails.title }}</h2>
+    <p v-if="portfolioDetails && portfolioDetails.description.length > 0">{{ portfolioDetails.description }}</p>
     <div v-if="portfolioDetails" class="image-container">
       <img
         v-for="image in portfolioDetails.Images"
