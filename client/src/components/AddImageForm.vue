@@ -4,7 +4,7 @@
       <input v-model="title" placeholder="Image Title (optional)" />
       <input v-model="description" placeholder="Description (optional)" />
       <input v-model="image" placeholder="Image URL (required)" type="url" required />
-      <button type="submit">Login</button>
+      <button type="submit">Add Image</button>
     </form>
   </div>
 </template>
