@@ -25,6 +25,7 @@ export default {
       this.password = ''
       this.$root.$data.store.setUser(payload)
       this.$root.$data.store.setAuthenticated(true)
+      this.$router.push('/')
     }
   }
 }
