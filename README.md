@@ -14,8 +14,6 @@
 
 Port-folio will be an easy and convenient place for artists to host their art in easy to share digital portfolios. Sign up to create your own portfolio, or browse public portfolios to find a new favorite artist.
 
-Development is managed and tracked on [Trello](https://trello.com/b/OF2b4ZfH/port-folio)
-
 ---
 
 **_Technologies Used_**
@@ -47,8 +45,7 @@ Coming soon.
 
 **_To Do_**
 
-- [ ] Everything!
-
----
-
-**_Credits_**
+- [ ] Add image hosting option
+- [ ] Allow further user customization and portfolio management
+- [ ] Allow for more shareable links--they're a bit bland as is.
+- [ ] There are a few possible security issues, the back end needs to be shored up before release.
