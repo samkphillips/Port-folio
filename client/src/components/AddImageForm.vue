@@ -1,6 +1,6 @@
 <template>
 <div>
-    <form @submit.prevent="login">
+    <form @submit.prevent="submitImage">
       <input v-model="title" placeholder="Image Title (optional)" />
       <input v-model="description" placeholder="Description (optional)" />
       <input v-model="image" placeholder="Image URL (required)" type="url" required />
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-// import { SignInUser } from '../services/Auth'
+import { CreateImage } from '../services/PortfolioServices'
 
 export default {
   name: 'AddImageForm',
@@ -24,11 +24,16 @@ export default {
   },
   methods: {
     async submitImage() {
-      const payload = await SignInUser({ email: this.email, password: this.password })
+      const payload = await CreateImage({
+        title: this.title,
+        description: this.description,
+        image: this.image,
+        portfolioId: this.portfolioId
+      })
       this.title = ''
       this.description = ''
       this.image = ''
-      console.log("Image Uploaded.")
+      console.log(`Image ${payload.id} Uploaded`)
     }
   }
 }
