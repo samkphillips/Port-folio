@@ -6,7 +6,8 @@
 
       <h3>Portfolio Settings</h3>
       <div v-if="userData.Portfolio">
-        <p>Looks like you have a portfolio, neato.</p>
+        <p>Your account has a portfolio.</p>
+        <p>Add new images with the following form.</p>
       </div>
       <div v-else>
         <p>Your account does not yet have an associated portfolio.</p>
@@ -14,8 +15,9 @@
         <button @click="createPortfolio">Create Portfolio</button>
       </div>
 
-      <h3>Account Settings</h3>
+      <!-- <h3>Account Settings</h3>
       <p>Password Change Form</p>
+      <p>Light/Dark Mode Toggle</p> -->
     </div>
 
     <div v-else>
