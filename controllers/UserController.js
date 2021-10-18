@@ -1,10 +1,27 @@
-const { User } = require('../models')
+const { User, Portfolio, Image } = require('../models')
 const middleware = require('../middleware')
 
 //probably remove this one on release lol
 const GetAllUsers = async (req, res) => {
   try {
     const users = await User.findAll()
+    res.send(users)
+  } catch (error) {
+    throw error
+  }
+}
+
+const GetUserById = async (req, res) => {
+  try {
+    const users = await User.findOne({
+      where: { id: req.params.id },
+      include: [
+        {
+          model: Portfolio,
+          include: [Image]
+        }
+      ]
+    })
     res.send(users)
   } catch (error) {
     throw error
@@ -99,6 +116,7 @@ const CheckSession = async (req, res) => {
 
 module.exports = {
   GetAllUsers,
+  GetUserById,
   CreateNewUser,
   LogUserIn,
   ChangePassword,

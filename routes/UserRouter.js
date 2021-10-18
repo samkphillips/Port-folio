@@ -3,6 +3,7 @@ const controller = require('../controllers/UserController')
 const middleware = require('../middleware')
 
 router.get('/all', controller.GetAllUsers)
+router.get('/byId/:id', controller.GetUserById)
 
 router.post('/login', controller.LogUserIn)
 router.post('/register', controller.CreateNewUser)
