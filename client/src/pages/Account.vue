@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="account-body">
     <h2>Account</h2>
     <div v-if="userData">
       <p>Hello, {{ userData.username }}</p>
@@ -60,3 +60,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.account-body {
+  width: calc(100vw - 15px);
+  padding: 0 70px;
+}
+</style>
