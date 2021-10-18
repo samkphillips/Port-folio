@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import router from './router'
 import App from './App.vue'
+import './styles/index.css'
+import './styles/App.css'
 
 import { CheckSession } from './services/Auth'
 
