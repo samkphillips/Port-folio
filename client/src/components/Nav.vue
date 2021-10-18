@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div>
-      <h2>Port-Folio</h2>
+      <router-link class="link" to="/"><h2>Port-Folio</h2></router-link>
     </div>
     <div>
       <router-link class="link" to="/">Home</router-link>
