@@ -33,13 +33,13 @@ Coming soon.
 
 **_Screenshots_**
 
-#### Entity Relationship Diagram
+#### Homepage
 
-![erd](/Screenshots/erd.png)
+![homepage](/Screenshots/homepage.png)
 
-#### Component Heirarchy Diagram
+#### Portfolio display with filler image
 
-![chd](/Screenshots/chd.png)
+![portfolio with mushroom pictures](/Screenshots/portfolio.png)
 
 ---
 
