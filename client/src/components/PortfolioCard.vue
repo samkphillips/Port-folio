@@ -23,10 +23,15 @@ export default {
 
 <style scoped>
 div {
-  background-color: cornflowerblue;
+  background-color: #7582E6;
+  color: #F0F1F9;
   height: 150px;
   width: 150px;
   padding: 10px;
   margin: 5px;
+}
+
+div:hover {
+  cursor: pointer;
 }
 </style>
