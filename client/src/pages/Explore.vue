@@ -3,7 +3,11 @@
     <h2>Explore</h2>
     <p>There'll be portfolios here.</p>
     <div v-if="featuredPortfolios">
-      <h3 v-for="port in featuredPortfolios" :key="`portfolio-${port.id}`">Portfolio here!</h3>
+      <PortfolioCard
+        v-for="port in featuredPortfolios"
+        :key="`portfolio-${port.id}`"
+        :portfolio="port"
+      />
     </div>
     <div v-else>
       <h5>Loading...</h5>
@@ -15,9 +19,13 @@
 import axios from 'axios'
 
 import { BASE_URL } from '../globals'
+import PortfolioCard from '../components/PortfolioCard.vue'
 
 export default {
   name: 'Explore',
+  components: {
+    PortfolioCard
+  },
   data: () => ({
     featuredPortfolios: null
   }),
