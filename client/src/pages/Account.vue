@@ -2,9 +2,20 @@
   <div>
     <h2>Account</h2>
     <div v-if="userData">
-      <p>Settings and etc.</p>
       <p>Hello, {{ userData.username }}</p>
+      <h3>Portfolio Settings</h3>
+      <div v-if="userData.Portfolio">
+        <p>Looks like you have a portfolio, neato.</p>
+      </div>
+      <div v-else>
+        <p>Your account does not yet have an associated portfolio.</p>
+        <p>Simply click below to create one.</p>
+        <button>Create Portfolio</button>
+      </div>
+      <h3>Account Settings</h3>
+      <p>Password Change Form</p>
     </div>
+
     <div v-else>
       <h5>Gathering your account data, this may take a moment.</h5>
     </div>
