@@ -3,7 +3,12 @@ const controller = require('../controllers/PortfolioController')
 const middleware = require('../middleware')
 
 router.get('/all', controller.GetAllPortfolios)
-router.post('/create', controller.CreatePortfolio)
+router.post(
+  '/create',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.CreatePortfolio
+)
 // router.put(
 //   '/updateportfolio',
 //   middleware.stripToken,
@@ -17,6 +22,6 @@ router.post('/create', controller.CreatePortfolio)
 //   controller.DeleteUserAccount
 // )
 router.get('/byId/:id', controller.FindPortfolioById)
-router.get('/byId/:user_id', controller.FindPortfolioByUserId)
+router.get('/byUserId/:user_id', controller.FindPortfolioByUserId)
 
 module.exports = router

@@ -1,4 +1,4 @@
-const { Portfolio } = require('../models')
+const { Portfolio, Image } = require('../models')
 // const Sequelize = require('sequelize')
 // const Op = Sequelize.Op
 
@@ -32,7 +32,8 @@ const CreatePortfolio = async (req, res) => {
 const FindPortfolioById = async (req, res) => {
   try {
     const data = await Portfolio.findOne({
-      where: { id: req.params.id }
+      where: { id: req.params.id },
+      include: [Image]
     })
     res.send(data)
   } catch (error) {
@@ -43,7 +44,8 @@ const FindPortfolioById = async (req, res) => {
 const FindPortfolioByUserId = async (req, res) => {
   try {
     const data = await Portfolio.findOne({
-      where: { id: req.params.user_id }
+      where: { id: req.params.user_id },
+      include: [Image]
     })
     res.send(data)
   } catch (error) {
