@@ -1,6 +1,6 @@
 <template>
 <div @click="selectPortfolio">
-  <h3>Portfolio! ID is {{ portfolio.id }}</h3>
+  <img src="https://source.unsplash.com/random/?art" class="fit" />
 </div>
 </template>
 
@@ -25,13 +25,22 @@ export default {
 div {
   background-color: #7582E6;
   color: #F0F1F9;
-  height: 150px;
-  width: 150px;
-  padding: 10px;
+  height: 180px;
+  width: 180px;
   margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 div:hover {
   cursor: pointer;
+}
+
+.fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
