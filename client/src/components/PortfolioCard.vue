@@ -10,9 +10,6 @@ export default {
   props: {
     portfolio: Object
   },
-  mounted() {
-    console.log(this.portfolio)
-  },
   methods: {
     selectPortfolio() {
       this.$router.push(`/portfolio/${this.portfolio.id}`)
