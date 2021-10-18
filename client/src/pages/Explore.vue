@@ -2,8 +2,11 @@
   <div>
     <h2>Explore</h2>
     <p>There'll be portfolios here.</p>
-    <div>
+    <div v-if="featuredPortfolios">
       <h3 v-for="port in featuredPortfolios" :key="`portfolio-${port.id}`">Portfolio here!</h3>
+    </div>
+    <div v-else>
+      <h5>Loading...</h5>
     </div>
   </div>
 </template>
