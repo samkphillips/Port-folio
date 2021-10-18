@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="explore-body">
     <h2>Explore</h2>
     <h3>Featured Portfolios</h3>
     <div v-if="featuredPortfolios" class="scroll-list">
@@ -44,6 +44,15 @@ export default {
 </script>
 
 <style scoped>
+.explore-body {
+  width: calc(100vw - 15px);
+  padding: 0 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .scroll-list {
   width: 90%;
   margin: 0 20px;
